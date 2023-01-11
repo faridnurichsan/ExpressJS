@@ -1,0 +1,24 @@
+// Membuat Server
+1. npm init (menginstall package.json)
+2. npm i @babel/core @babel/node @babel/plugin-transform-runtime @babel/preset-env @babel/runtime express dotenv pg sequelize nodemon jsonwebtoken
+(menginstal dependencies yang diperlukan)
+3. npm i -D sequelize-auto
+4. tambah start = 'nodemone --exec babel-node (nama_file).js (untuk dapat mengeksekusi dengan npm start)
+5. import express from 'express'
+6. declare pemanggilan express dengan const app = express()
+7. declare port yang digunakan untuk localhost dengan const port = process.env.PORT || 3003
+8. buat file .env dan isi data port, database, dll
+9. buat file .babelrc isi babel presets
+10. buat funtion agar database tidak di drop dengan
+	const dropDatabaseSync = false;
+	sequelize.sync({force: dropDatabaseSync}).then(()=>{
+    	if(dropDatabaseSync){
+        console.log("Database do not drop");
+    	}
+	})
+(berguna agar database tidak di drop)
+
+11. untuk pengetesan di postman dengan app.use('/',(req, res)=>{ res.send}
+12. tambahkan reverse:id pada script dengan (sequelize-auto -o ./models -d nama_db -h nama_host -u nama_user -p port-x password -e language0
+13. menginstall models dengan npm run reverse:db
+14. tambahkan app.use(routes) untuk membaca routes

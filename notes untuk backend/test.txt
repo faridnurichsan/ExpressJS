@@ -1,0 +1,24 @@
+- npm init
+- npm i @babel/core @babel/node @babel/plugin-transform-runtime @babel/preset-env @babel/runtime express dotenv pg sequelize nodemon jsonwebtoken
+- npm i -D sequelize-auto
+- buat scritp start = 'nodemon --exec babel-node (nama_file).js'
+- buat file .babelrc , dan .env
+
+- buat file server
+	- import express
+	- import dotenv
+	- memanggil express() dengan  const app = express()
+	- buat port dari file .env atau yang diset manual
+	- buat app.listen(port,()=>{})
+	- npm run reverse:db
+	- buat sequelize pada init-models
+	- import models, {sequelize} from ./
+	-buat drop database
+
+- bikin folder controller
+	-buat file controller
+		- import models
+		- buat function
+- bikin folder routes
+	- bikin file routes
+	- import {Router} from 'express'	
